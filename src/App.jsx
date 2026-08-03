@@ -5,11 +5,11 @@ import Home from "./Home/Home"
 function App() {
 
   return (
-    <>
+    <div className="bg-gray-900">
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-    </>
+    </div>
   )
 }
 

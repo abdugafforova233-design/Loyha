@@ -1,0 +1,64 @@
+{
+    "kategoriyalar": [
+        {
+            "name": "Noutbuklar",
+            "image": "@/assets/noutbuk.png",
+            "category": "noutbuk",
+            "id": 1
+        },
+        {
+            "name": "Kompyuterlar",
+            "image": "@/assets/kompyuter.png",
+            "category": "kompyuter",
+            "id": 2
+        },
+        {
+            "name": "Monitorlar",
+            "image": "@/assets/monitor.png",
+            "category": "monitor",
+            "id": 3
+        },
+        {
+            "name": "Klaviaturalar",
+            "image": "@/assets/klaviatura.png",
+            "category": "klaviatura",
+            "id": 4
+        },
+        {
+            "name": "Sichqonchalar",
+            "image": "@/assets/sichqoncha.png",
+            "category": "sichqoncha",
+            "id": 5
+        },
+        {
+            "name": "Quloqchinlar",
+            "image": "@/assets/quloqchin.png",
+            "category": "quloqchin",
+            "id": 6
+        },
+        {
+            "name": "Mikrofonlar",
+            "image": "@/assets/mikrofon.png",
+            "category": "mikrofon",
+            "id": 7
+        },
+        {
+            "name": "Komponentlar",
+            "image": "@/assets/komponent.png",
+            "category": "komponent",
+            "id": 8
+        },
+        {
+            "name": "Aksessuarlar",
+            "image": "@/assets/aksessuar.png",
+            "category": "aksessuar",
+            "id": 9
+        },
+        {
+            "name": "Xotira qurilmalari",
+            "image": "@/assets/xotira.png",
+            "category": "xotira",
+            "id": 10
+        }
+    ]
+}
