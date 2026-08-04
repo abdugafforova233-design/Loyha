@@ -2,61 +2,61 @@
     "kategoriyalar": [
         {
             "name": "Noutbuklar",
-            "image": "@/assets/noutbuk.png",
+            "image": "/images/noutbuk.png",
             "category": "noutbuk",
             "id": 1
         },
         {
             "name": "Kompyuterlar",
-            "image": "@/assets/kompyuter.png",
+            "image": "/images/kompyuter.png",
             "category": "kompyuter",
             "id": 2
         },
         {
             "name": "Monitorlar",
-            "image": "@/assets/monitor.png",
+            "image": "/images/monitor.png",
             "category": "monitor",
             "id": 3
         },
         {
             "name": "Klaviaturalar",
-            "image": "@/assets/klaviatura.png",
+            "image": "/images/klaviatura.png",
             "category": "klaviatura",
             "id": 4
         },
         {
             "name": "Sichqonchalar",
-            "image": "@/assets/sichqoncha.png",
+            "image": "/images/sichqoncha.png",
             "category": "sichqoncha",
             "id": 5
         },
         {
             "name": "Quloqchinlar",
-            "image": "@/assets/quloqchin.png",
+            "image": "/images/quloqchin.png",
             "category": "quloqchin",
             "id": 6
         },
         {
             "name": "Mikrofonlar",
-            "image": "@/assets/mikrofon.png",
+            "image": "/images/mikrofon.png",
             "category": "mikrofon",
             "id": 7
         },
         {
             "name": "Komponentlar",
-            "image": "@/assets/komponent.png",
+            "image": "/images/komponent.png",
             "category": "komponent",
             "id": 8
         },
         {
             "name": "Aksessuarlar",
-            "image": "@/assets/aksessuar.png",
+            "image": "/images/aksessuar.png",
             "category": "aksessuar",
             "id": 9
         },
         {
             "name": "Xotira qurilmalari",
-            "image": "@/assets/xotira.png",
+            "image": "/images/xotira_qurilma.png",
             "category": "xotira",
             "id": 10
         }
