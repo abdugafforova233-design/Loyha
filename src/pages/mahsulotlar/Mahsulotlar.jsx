@@ -1,12 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { HiOutlineHeart, HiOutlineShoppingCart } from "react-icons/hi2";
 import { TbCategory } from "react-icons/tb";
+import Pagination from "./Pagination";
+
 
 function Mahsulotlar() {
     const [min, setMin] = useState(500000);
     const [max, setMax] = useState(12000000);
+
+    const [mahsulotlar, setMahsulotlar] = useState([]);
+    useEffect(() => {
+        fetch("http://localhost:3000/kategoriyalar")
+            .then((res) => res.json())
+            .then((data) => {
+                setMahsulotlar(data);
+            })
+            .catch((err) => console.log(err));
+    }, []);
+
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const itemsPerPage = 8;
+
+    const totalPages = Math.ceil(mahsulotlar.length / itemsPerPage);
+
+    const currentProducts = mahsulotlar.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+    );
+
     return (
-        <div>
-            <div className="flex flex-col gap-4 p-4 m-3 w-3xs border border-violet-400 rounded-2xl">
+        <div className="flex">
+            <div className="flex flex-col h-220 gap-4 p-4 m-3 w-3xs border border-violet-400 rounded-2xl">
                 {/* Kategoriyalar */}
                 <div className="flex flex-col gap-2 text-white border-b-1 border-violet-400 py-4">
                     <h2 className="">
@@ -67,7 +92,11 @@ function Mahsulotlar() {
                     </div>
                 </div>
                 {/* Brendlar */}
-                <div className="flex flex-col gap-2 text-white border-b-1 border-violet-400 py-4">
+                <div className="flex flex-col gap-2 text-white py-4">
+                    <h2 className="flex gap-2 text-white my-4">
+                        <TbCategory className="text-violet-500 text-2xl" />
+                        Brendlar
+                    </h2>
                     <h2 >
                         <input type="checkbox" name="category" />
                         ASUS
@@ -97,8 +126,58 @@ function Mahsulotlar() {
                         Apple
                     </h2>
                 </div>
-
             </div>
+            {/* Mahsulotlar */}
+            <div className="mt-5">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    {currentProducts.map((item) => (
+                        <div
+                            key={item.id}
+                            className="bg-[#151A2D] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-600/30 hover:-translate-y-2 duration-300"
+                        >
+                            <div className="relative">
+                                <img
+                                    src={item.image}
+                                    alt={item.name}
+                                    className="w-full h-64 object-cover"
+                                />
+
+                                <button className="absolute top-4 right-4 bg-[#0F172A]/80 p-2 rounded-full text-xl text-white hover:text-red-500 duration-300">
+                                    <HiOutlineHeart />
+                                </button>
+                            </div>
+
+                            <div className="p-5">
+                                <h3 className="text-xl font-semibold text-white mt-2">
+                                    {item.name}
+                                </h3>
+
+                                <p className="text-sm text-gray-400">
+                                    {item.category}
+                                </p>
+
+                                <div className="flex items-center justify-between mt-5">
+                                    <span className="text-2xl font-bold text-indigo-500">
+                                        {item.price}
+                                    </span>
+
+                                    <button className="w-12 h-12 rounded-xl bg-indigo-600 hover:bg-indigo-700 flex items-center justify-center text-2xl text-white duration-300">
+                                        <HiOutlineShoppingCart />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className="mt-10 flex justify-center">
+                    <Pagination
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={setCurrentPage}
+                    />
+                </div>
+            </div>
+
         </div >
     )
 }

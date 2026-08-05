@@ -60,5 +60,63 @@
             "category": "xotira",
             "id": 10
         }
+    ],
+    "mahsulotlar": [
+        {
+            "name": "ASUS ROG Strix G16",
+            "image": "/images/ImgAcus.png",
+            "category": "noutbuk",
+            "price": "15 499 000 so'm",
+            "id": 1
+        },
+        {
+            "name": "Lenovo Legion 5 Pro",
+            "image": "/images/Legion.png",
+            "category": "noutbuk",
+            "price": "13 990 000 so'm",
+            "id": 2
+        },
+        {
+            "name": "MSI Katana 15",
+            "image": "/images/Msi.png",
+            "category": "noutbuk",
+            "price": "11 999 000 so'm",
+            "id": 3
+        },
+        {
+            "name": "ASUS TUF Gaming A15",
+            "image": "/images/TufGaming.png",
+            "category": "noutbuk",
+            "price": "10 999 000 so'm",
+            "id": 4
+        },
+        {
+            "name": "Acer Nitro 5",
+            "image": "/images/acer.png",
+            "category": "noutbuk",
+            "price": "9 999 000 so'm",
+            "id": 5
+        },
+        {
+            "name": "HP Victus",
+            "image": "/images/hp.png",
+            "category": "noutbuk",
+            "price": "9 499 000 so'm",
+            "id": 6
+        },
+        {
+            "name": "Lenovo LOQ 15",
+            "image": "/images/Lenovo.png",
+            "category": "noutbuk",
+            "price": "8 999 000 so'm",
+            "id": 7
+        },
+        {
+            "name": "ASUS VivoBook 15",
+            "image": "/images/ImgAcus.png",
+            "category": "noutbuk",
+            "price": "6 499 000 so'm",
+            "id": 8
+        }
     ]
 }
