@@ -39,7 +39,7 @@ function Navbar() {
                     to="/aloqa" >Aloqa</Link>
                 <Link
                     className=" text-white pb-1 border-b-2 me-4 border-transparent hover:border-violet-500 hover:text-violet-500 transition-all duration-300 "
-                    to="/biz-haqda" >Biz haqda</Link>
+                    to="/biz_haqimizda" >Biz haqda</Link>
             </nav>
             <div className="flex items-center gap-6">
                 <HiOutlineHeart className="text-2xl text-white cursor-pointer" />

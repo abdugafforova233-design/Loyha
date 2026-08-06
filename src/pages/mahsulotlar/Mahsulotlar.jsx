@@ -32,7 +32,7 @@ function Mahsulotlar() {
     return (
         <div className="flex">
             <div className="flex flex-col h-220 gap-4 p-4 m-3 w-3xs border border-violet-400 rounded-2xl">
-                {/* Kategoriyalar */}
+
                 <div className="flex flex-col gap-2 text-white border-b-1 border-violet-400 py-4">
                     <h2 className="">
                         <TbCategory className="text-violet-500 text-2xl" />
@@ -71,7 +71,7 @@ function Mahsulotlar() {
                         Aksessuarlar
                     </h2>
                 </div>
-                {/* Narx oralig'i */}
+
                 <div className="flex flex-col gap-2 text-white border-b-1 border-violet-400 py-4">
                     <h2 className="flex gap-2 text-white my-4">
                         <TbCategory className="text-violet-500 text-2xl" />
@@ -91,7 +91,7 @@ function Mahsulotlar() {
                         <span className="text-white border border-violet-400 rounded-lg p-2">{max.toLocaleString()}</span>
                     </div>
                 </div>
-                {/* Brendlar */}
+
                 <div className="flex flex-col gap-2 text-white py-4">
                     <h2 className="flex gap-2 text-white my-4">
                         <TbCategory className="text-violet-500 text-2xl" />
@@ -127,7 +127,7 @@ function Mahsulotlar() {
                     </h2>
                 </div>
             </div>
-            {/* Mahsulotlar */}
+
             <div className="mt-5">
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     {currentProducts.map((item) => (
