@@ -42,8 +42,9 @@ function Navbar() {
                     to="/biz_haqimizda" >Biz haqda</Link>
             </nav>
             <div className="flex items-center gap-6">
-                <HiOutlineHeart className="text-2xl text-white cursor-pointer" />
-
+                <Link to="/izbriniy">
+                    <HiOutlineHeart className="text-2xl text-white cursor-pointer" />
+                </Link>
                 <div className="relative">
                     <HiOutlineShoppingCart className="text-2xl text-white cursor-pointer" />
                     <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-violet-600 text-xs text-white flex items-center justify-center">

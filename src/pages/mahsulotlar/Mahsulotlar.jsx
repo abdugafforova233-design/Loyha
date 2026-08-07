@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { HiOutlineHeart, HiOutlineShoppingCart } from "react-icons/hi2";
 import { TbCategory } from "react-icons/tb";
 import Pagination from "./Pagination";
+import { Link } from "react-router-dom";
 
 
 function Mahsulotlar() {
@@ -10,7 +11,7 @@ function Mahsulotlar() {
 
     const [mahsulotlar, setMahsulotlar] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:3000/kategoriyalar")
+        fetch("http://localhost:3000/mahsulotlar")
             .then((res) => res.json())
             .then((data) => {
                 setMahsulotlar(data);
@@ -31,6 +32,7 @@ function Mahsulotlar() {
 
     return (
         <div className="flex">
+            {/* Filter */}
             <div className="flex flex-col h-220 gap-4 p-4 m-3 w-3xs border border-violet-400 rounded-2xl">
 
                 <div className="flex flex-col gap-2 text-white border-b-1 border-violet-400 py-4">
@@ -127,12 +129,15 @@ function Mahsulotlar() {
                     </h2>
                 </div>
             </div>
+            {/* Mahsulotlar */}
 
             <div className="mt-5">
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
                     {currentProducts.map((item) => (
-                        <div
+                        <Link
                             key={item.id}
+                            to={`/ProductInformation/${item.id}`}
                             className="bg-[#151A2D] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-600/30 hover:-translate-y-2 duration-300"
                         >
                             <div className="relative">
@@ -142,7 +147,10 @@ function Mahsulotlar() {
                                     className="w-full h-64 object-cover"
                                 />
 
-                                <button className="absolute top-4 right-4 bg-[#0F172A]/80 p-2 rounded-full text-xl text-white hover:text-red-500 duration-300">
+                                <button
+                                    onClick={(e) => e.preventDefault()}
+                                    className="absolute top-4 right-4 bg-[#0F172A]/80 p-2 rounded-full text-xl text-white hover:text-red-500 duration-300"
+                                >
                                     <HiOutlineHeart />
                                 </button>
                             </div>
@@ -157,18 +165,46 @@ function Mahsulotlar() {
                                 </p>
 
                                 <div className="flex items-center justify-between mt-5">
+
                                     <span className="text-2xl font-bold text-indigo-500">
-                                        {item.price}
+                                        {Number(item.price).toLocaleString()} so'm
                                     </span>
 
-                                    <button className="w-12 h-12 rounded-xl bg-indigo-600 hover:bg-indigo-700 flex items-center justify-center text-2xl text-white duration-300">
+                                    <button
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+
+                                            const favorites =
+                                                JSON.parse(localStorage.getItem("favorites")) || [];
+
+                                            const mavjud = favorites.find(
+                                                (fav) => fav.id === item.id
+                                            );
+
+                                            if (!mavjud) {
+                                                favorites.push(item);
+
+                                                localStorage.setItem(
+                                                    "favorites",
+                                                    JSON.stringify(favorites)
+                                                );
+                                            }
+
+                                            window.location.href = "/favorites";
+                                        }}
+                                        className="w-12 h-12 rounded-xl bg-indigo-600 hover:bg-indigo-700 flex items-center justify-center text-2xl text-white duration-300"
+                                    >
                                         <HiOutlineShoppingCart />
                                     </button>
+
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
+
                 </div>
+
                 <div className="mt-10 flex justify-center">
                     <Pagination
                         currentPage={currentPage}

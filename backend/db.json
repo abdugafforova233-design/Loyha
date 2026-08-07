@@ -1,61 +1,61 @@
 {
     "kategoriyalar": [
         {
-            "name": "Noutbuklar",
+            "name": "Noutbuk",
             "image": "/images/noutbuk.png",
             "category": "noutbuk",
             "id": 1
         },
         {
-            "name": "Kompyuterlar",
+            "name": "Kompyuter",
             "image": "/images/kompyuter.png",
             "category": "kompyuter",
             "id": 2
         },
         {
-            "name": "Monitorlar",
+            "name": "Monitor",
             "image": "/images/monitor.png",
             "category": "monitor",
             "id": 3
         },
         {
-            "name": "Klaviaturalar",
+            "name": "Klaviatura",
             "image": "/images/klaviatura.png",
             "category": "klaviatura",
             "id": 4
         },
         {
-            "name": "Sichqonchalar",
+            "name": "Sichqoncha",
             "image": "/images/sichqoncha.png",
             "category": "sichqoncha",
             "id": 5
         },
         {
-            "name": "Quloqchinlar",
+            "name": "Quloqchin",
             "image": "/images/quloqchin.png",
             "category": "quloqchin",
             "id": 6
         },
         {
-            "name": "Mikrofonlar",
+            "name": "Mikrofon",
             "image": "/images/mikrofon.png",
             "category": "mikrofon",
             "id": 7
         },
         {
-            "name": "Komponentlar",
+            "name": "Komponent",
             "image": "/images/komponent.png",
             "category": "komponent",
             "id": 8
         },
         {
-            "name": "Aksessuarlar",
+            "name": "Aksessuar",
             "image": "/images/aksessuar.png",
             "category": "aksessuar",
             "id": 9
         },
         {
-            "name": "Xotira qurilmalari",
+            "name": "Xotira qurilmai",
             "image": "/images/xotira_qurilma.png",
             "category": "xotira",
             "id": 10
@@ -66,56 +66,56 @@
             "name": "ASUS ROG Strix G16",
             "image": "/images/ImgAcus.png",
             "category": "noutbuk",
-            "price": "15 499 000 so'm",
+            "price": 15499000,
             "id": 1
         },
         {
             "name": "Lenovo Legion 5 Pro",
             "image": "/images/Legion.png",
             "category": "noutbuk",
-            "price": "13 990 000 so'm",
+            "price": 13990000,
             "id": 2
         },
         {
             "name": "MSI Katana 15",
             "image": "/images/Msi.png",
             "category": "noutbuk",
-            "price": "11 999 000 so'm",
+            "price": 11999000,
             "id": 3
         },
         {
             "name": "ASUS TUF Gaming A15",
             "image": "/images/TufGaming.png",
             "category": "noutbuk",
-            "price": "10 999 000 so'm",
+            "price": 10999000,
             "id": 4
         },
         {
             "name": "Acer Nitro 5",
             "image": "/images/acer.png",
             "category": "noutbuk",
-            "price": "9 999 000 so'm",
+            "price": 9999000,
             "id": 5
         },
         {
             "name": "HP Victus",
             "image": "/images/hp.png",
             "category": "noutbuk",
-            "price": "9 499 000 so'm",
+            "price": 9499000,
             "id": 6
         },
         {
             "name": "Lenovo LOQ 15",
             "image": "/images/Lenovo.png",
             "category": "noutbuk",
-            "price": "8 999 000 so'm",
+            "price": 8999000,
             "id": 7
         },
         {
             "name": "ASUS VivoBook 15",
             "image": "/images/ImgAcus.png",
             "category": "noutbuk",
-            "price": "6 499 000 so'm",
+            "price": 6499000,
             "id": 8
         }
     ]
