@@ -46,12 +46,15 @@ function Navbar() {
                     <HiOutlineHeart className="text-2xl text-white cursor-pointer" />
                 </Link>
                 <div className="relative">
-                    <HiOutlineShoppingCart className="text-2xl text-white cursor-pointer" />
-                    <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-violet-600 text-xs text-white flex items-center justify-center">
+                    <Link to="/cart">
+                        <HiOutlineShoppingCart className="text-2xl text-white cursor-pointer" />
+                    </Link>
+                    {/* <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-violet-600 text-xs text-white flex items-center justify-center">
                         0
-                    </span>
+                    </span> */}
                 </div>
             </div>
+
 
         </div>
     )

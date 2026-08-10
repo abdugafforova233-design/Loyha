@@ -117,6 +117,76 @@
             "category": "noutbuk",
             "price": 6499000,
             "id": 8
+        },
+        {
+            "name": "Noutbuk",
+            "image": "/images/noutbuk.png",
+            "category": "noutbuk",
+            "price": 15499000,
+            "id": 9
+        },
+        {
+            "name": "Kompyuter",
+            "image": "/images/kompyuter.png",
+            "category": "kompyuter",
+            "price": 8999000,
+            "id": 10
+        },
+        {
+            "name": "Monitor",
+            "image": "/images/monitor.png",
+            "category": "monitor",
+            "price": 9999000,
+            "id": 11
+        },
+        {
+            "name": "Klaviatura",
+            "image": "/images/klaviatura.png",
+            "category": "klaviatura",
+            "price": 13990000,
+            "id": 12
+        },
+        {
+            "name": "Sichqoncha",
+            "image": "/images/sichqoncha.png",
+            "category": "sichqoncha",
+            "price": 9499000,
+            "id": 13
+        },
+        {
+            "name": "Quloqchin",
+            "image": "/images/quloqchin.png",
+            "category": "quloqchin",
+            "price": 9499000,
+            "id": 14
+        },
+        {
+            "name": "Mikrofon",
+            "image": "/images/mikrofon.png",
+            "category": "mikrofon",
+            "price": 10999000,
+            "id": 15
+        },
+        {
+            "name": "Komponent",
+            "image": "/images/komponent.png",
+            "category": "komponent",
+            "price": 11999000,
+            "id": 16
+        },
+        {
+            "name": "Aksessuar",
+            "image": "/images/aksessuar.png",
+            "category": "aksessuar",
+            "price": 2342521,
+            "id": 17
+        },
+        {
+            "name": "Xotira qurilmai",
+            "image": "/images/xotira_qurilma.png",
+            "category": "xotira",
+            "price": 11999000,
+            "id": 18
         }
     ]
 }

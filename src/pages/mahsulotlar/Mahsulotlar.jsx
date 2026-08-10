@@ -148,7 +148,21 @@ function Mahsulotlar() {
                                 />
 
                                 <button
-                                    onClick={(e) => e.preventDefault()}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+
+                                        const favorites =
+                                            JSON.parse(localStorage.getItem("favorites")) || [];
+
+                                        const newFavorites = [...favorites, item];
+
+                                        localStorage.setItem(
+                                            "favorites",
+                                            JSON.stringify(newFavorites)
+                                        );
+
+                                    }}
                                     className="absolute top-4 right-4 bg-[#0F172A]/80 p-2 rounded-full text-xl text-white hover:text-red-500 duration-300"
                                 >
                                     <HiOutlineHeart />
@@ -172,26 +186,14 @@ function Mahsulotlar() {
 
                                     <button
                                         onClick={(e) => {
-                                            e.preventDefault();
-                                            e.stopPropagation();
-
-                                            const favorites =
-                                                JSON.parse(localStorage.getItem("favorites")) || [];
-
-                                            const mavjud = favorites.find(
-                                                (fav) => fav.id === item.id
-                                            );
-
-                                            if (!mavjud) {
-                                                favorites.push(item);
-
-                                                localStorage.setItem(
-                                                    "favorites",
-                                                    JSON.stringify(favorites)
-                                                );
-                                            }
-
-                                            window.location.href = "/favorites";
+                                            e.preventDefault()
+                                            e.stopPropagation()
+                                            const korzinka = JSON.parse(localStorage.getItem("korzinka")) || []
+                                            const newKorzinka = [...korzinka, item]
+                                            localStorage.setItem(
+                                                "korzinka",
+                                                JSON.stringify(newKorzinka)
+                                            )
                                         }}
                                         className="w-12 h-12 rounded-xl bg-indigo-600 hover:bg-indigo-700 flex items-center justify-center text-2xl text-white duration-300"
                                     >

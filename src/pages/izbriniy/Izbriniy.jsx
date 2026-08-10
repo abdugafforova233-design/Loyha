@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { HiOutlineShoppingCart, HiOutlineTrash } from "react-icons/hi2";
 
 function Izbriniy() {
 
@@ -12,7 +13,6 @@ function Izbriniy() {
         setFavorites(data);
 
     }, []);
-
 
     // Mahsulotni izbrinniydan o'chirish
     const removeFavorite = (id) => {

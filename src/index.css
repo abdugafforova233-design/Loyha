@@ -1,1 +1,21 @@
 @import "tailwindcss";
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Scrollbar yonidagi yo'lni yo'qotadi */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Scroll qilinadigan qismi */
+::-webkit-scrollbar-thumb {
+    background: #6d28d9;
+    border-radius: 10px;
+}
+
+/* Hover qilganda */
+::-webkit-scrollbar-thumb:hover {
+    background: #7c3aed;
+}
