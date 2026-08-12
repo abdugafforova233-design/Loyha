@@ -1,45 +1,15 @@
-import { useEffect, useState } from "react";
 import { HiOutlineShoppingCart, HiOutlineTrash } from "react-icons/hi2";
+import { useFavorites } from "../../Contexr/FavoritesContext";
+
 
 function Izbriniy() {
 
-    const [favorites, setFavorites] = useState([]);
-
-    useEffect(() => {
-
-        const data =
-            JSON.parse(localStorage.getItem("favorites")) || [];
-
-        setFavorites(data);
-
-    }, []);
-
-    // Mahsulotni izbrinniydan o'chirish
-    const removeFavorite = (id) => {
-
-        const newFavorites = favorites.filter(
-            (item) => String(item.id) !== String(id)
-        );
-
-        setFavorites(newFavorites);
-
-        localStorage.setItem(
-            "favorites",
-            JSON.stringify(newFavorites)
-        );
-    };
-
-
+    const { favorites, removeFavorite } = useFavorites();
 
     return (
-        <div className="min-h-screen bg-[#05070d] p-5 text-white">
+        <div className="min-h-screen p-5 text-white">
 
             <div className="max-w-7xl mx-auto">
-
-                <h1 className="text-3xl font-bold mb-6">
-                    Izbrinniy ❤️
-                </h1>
-
 
                 {favorites.length === 0 ? (
 
@@ -97,7 +67,19 @@ function Izbriniy() {
                                             {Number(item.price).toLocaleString()} so'm
                                         </p>
 
-                                        <button className="w-10 h-10 border border-violet-500 rounded-lg flex items-center justify-center text-violet-500 hover:bg-violet-600 hover:text-white duration-300">
+                                        <button
+                                            onClick={(e) => {
+                                                e.preventDefault()
+                                                e.stopPropagation()
+                                                const korzinka = JSON.parse(localStorage.getItem("korzinka")) || []
+                                                const newKorzinka = [...korzinka, item]
+                                                localStorage.setItem(
+                                                    "korzinka",
+                                                    JSON.stringify(newKorzinka)
+                                                )
+                                            }}
+                                            className="w-12 h-12 rounded-xl bg-indigo-600 hover:bg-indigo-700 flex items-center justify-center text-2xl text-white duration-300"
+                                        >
                                             <HiOutlineShoppingCart />
                                         </button>
 

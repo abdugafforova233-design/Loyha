@@ -3,6 +3,7 @@ import { HiOutlineHeart, HiOutlineShoppingCart } from "react-icons/hi2";
 import { TbCategory } from "react-icons/tb";
 import Pagination from "./Pagination";
 import { Link } from "react-router-dom";
+import { useFavorites } from "../../Contexr/FavoritesContext";
 
 
 function Mahsulotlar() {
@@ -29,7 +30,7 @@ function Mahsulotlar() {
         (currentPage - 1) * itemsPerPage,
         currentPage * itemsPerPage
     );
-
+    const { addFavorite } = useFavorites();
     return (
         <div className="flex">
             {/* Filter */}
@@ -132,7 +133,7 @@ function Mahsulotlar() {
             {/* Mahsulotlar */}
 
             <div className="mt-5">
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
 
                     {currentProducts.map((item) => (
                         <Link
@@ -152,15 +153,7 @@ function Mahsulotlar() {
                                         e.preventDefault();
                                         e.stopPropagation();
 
-                                        const favorites =
-                                            JSON.parse(localStorage.getItem("favorites")) || [];
-
-                                        const newFavorites = [...favorites, item];
-
-                                        localStorage.setItem(
-                                            "favorites",
-                                            JSON.stringify(newFavorites)
-                                        );
+                                        addFavorite(item);
 
                                     }}
                                     className="absolute top-4 right-4 bg-[#0F172A]/80 p-2 rounded-full text-xl text-white hover:text-red-500 duration-300"

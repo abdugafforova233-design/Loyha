@@ -64,6 +64,7 @@
     "mahsulotlar": [
         {
             "name": "ASUS ROG Strix G16",
+            "brand": "ASUS",
             "image": "/images/ImgAcus.png",
             "category": "noutbuk",
             "price": 15499000,
@@ -71,6 +72,7 @@
         },
         {
             "name": "Lenovo Legion 5 Pro",
+            "brand": "Lenovo",
             "image": "/images/Legion.png",
             "category": "noutbuk",
             "price": 13990000,
@@ -78,13 +80,15 @@
         },
         {
             "name": "MSI Katana 15",
+            "brand": "MSI",
             "image": "/images/Msi.png",
             "category": "noutbuk",
             "price": 11999000,
             "id": 3
         },
         {
-            "name": "ASUS TUF Gaming A15",
+            "name": "ASUS TUF Gaming",
+            "brand": "ASUS",
             "image": "/images/TufGaming.png",
             "category": "noutbuk",
             "price": 10999000,
@@ -92,6 +96,7 @@
         },
         {
             "name": "Acer Nitro 5",
+            "brand": "Acer",
             "image": "/images/acer.png",
             "category": "noutbuk",
             "price": 9999000,
@@ -99,6 +104,7 @@
         },
         {
             "name": "HP Victus",
+            "brand": "HP",
             "image": "/images/hp.png",
             "category": "noutbuk",
             "price": 9499000,
@@ -106,6 +112,7 @@
         },
         {
             "name": "Lenovo LOQ 15",
+            "brand": "Lenovo",
             "image": "/images/Lenovo.png",
             "category": "noutbuk",
             "price": 8999000,
@@ -113,6 +120,7 @@
         },
         {
             "name": "ASUS VivoBook 15",
+            "brand": "ASUS",
             "image": "/images/ImgAcus.png",
             "category": "noutbuk",
             "price": 6499000,
@@ -120,6 +128,7 @@
         },
         {
             "name": "Noutbuk",
+            "brand": "Dell",
             "image": "/images/noutbuk.png",
             "category": "noutbuk",
             "price": 15499000,
@@ -127,6 +136,7 @@
         },
         {
             "name": "Kompyuter",
+            "brand": "Dell",
             "image": "/images/kompyuter.png",
             "category": "kompyuter",
             "price": 8999000,
@@ -134,6 +144,7 @@
         },
         {
             "name": "Monitor",
+            "brand": "Dell",
             "image": "/images/monitor.png",
             "category": "monitor",
             "price": 9999000,
@@ -141,6 +152,7 @@
         },
         {
             "name": "Klaviatura",
+            "brand": "Apple",
             "image": "/images/klaviatura.png",
             "category": "klaviatura",
             "price": 13990000,
@@ -148,6 +160,7 @@
         },
         {
             "name": "Sichqoncha",
+            "brand": "Apple",
             "image": "/images/sichqoncha.png",
             "category": "sichqoncha",
             "price": 9499000,
@@ -155,6 +168,7 @@
         },
         {
             "name": "Quloqchin",
+            "brand": "Apple",
             "image": "/images/quloqchin.png",
             "category": "quloqchin",
             "price": 9499000,
@@ -162,6 +176,7 @@
         },
         {
             "name": "Mikrofon",
+            "brand": "MSI",
             "image": "/images/mikrofon.png",
             "category": "mikrofon",
             "price": 10999000,
@@ -169,6 +184,7 @@
         },
         {
             "name": "Komponent",
+            "brand": "ASUS",
             "image": "/images/komponent.png",
             "category": "komponent",
             "price": 11999000,
@@ -176,6 +192,7 @@
         },
         {
             "name": "Aksessuar",
+            "brand": "Apple",
             "image": "/images/aksessuar.png",
             "category": "aksessuar",
             "price": 2342521,
@@ -183,6 +200,7 @@
         },
         {
             "name": "Xotira qurilmai",
+            "brand": "Apple",
             "image": "/images/xotira_qurilma.png",
             "category": "xotira",
             "price": 11999000,
