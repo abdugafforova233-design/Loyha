@@ -7,7 +7,7 @@ import { SiMastercard, SiVisa } from "react-icons/si"
 
 function Footer() {
     return (
-        <div className="mt-15 border-t border-[#232836] pt-14 pb-5">
+        <div className="border-t border-[#232836] pt-14 pb-5 hidden md:block">
             <div className="grid grid-cols-[1.4fr_3fr] gap-20">
                 <div>
                     <div className="flex items-center gap-3">

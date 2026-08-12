@@ -33,9 +33,9 @@ function Mahsulotlar() {
     return (
         <div className="flex">
             {/* Filter */}
-            <div className="flex flex-col h-220 gap-4 p-4 m-3 w-3xs border border-violet-400 rounded-2xl">
+            <div className="flex flex-col h-220 gap-4 p-4 m-3 w-3xs border border-violet-400 rounded-2xl hidden md:block">
 
-                <div className="flex flex-col gap-2 text-white border-b-1 border-violet-400 py-4">
+                <div className="flex flex-col gap-2 text-white border-b-1 border-violet-400 py-4 ">
                     <h2 className="">
                         <TbCategory className="text-violet-500 text-2xl" />
                         Kategoriyalar

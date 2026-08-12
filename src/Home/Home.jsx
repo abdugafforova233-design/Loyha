@@ -1,4 +1,3 @@
-// import { Link } from "react-router-dom";
 import Orqafon from "../assets/Orqafon.png"
 import ImigKlyava from "../assets/ImigKlyava.png";
 import ImigNaushnik from "../assets/ImigNaushnik.webp"
@@ -9,16 +8,16 @@ import ImigKorpus from "../assets/Korpus.jpg"
 import ImigAksesuarlar from "../assets/ImigAksesuarlar.png"
 import ImigNoutbuklar from "../assets/ImigNoutbuklar.png"
 import ImigKomponentlar from "../assets/ImigKomponentlar.png"
-import {
-    HiOutlineHeart,
-    HiOutlineShoppingCart,
-} from "react-icons/hi2";
+import {HiOutlineHeart, HiOutlineShoppingCart} from "react-icons/hi2";
 import { IoFlash } from "react-icons/io5";
 import { LuShieldCheck } from "react-icons/lu";
 import { GrCreditCard } from "react-icons/gr";
 import { LuHeadset } from "react-icons/lu";
-import { FaTruckFast } from "react-icons/fa6";
+import { FaComputer, FaComputerMouse, FaTruckFast } from "react-icons/fa6";
 import { useEffect, useState } from "react";
+import { IoMdLaptop } from "react-icons/io";
+import { FiMonitor } from "react-icons/fi";
+import { FaHeadphones, FaKeyboard } from "react-icons/fa";
 function Home() {
     const MashhurMahsulotlar = [
         {
@@ -38,7 +37,7 @@ function Home() {
         {
             name: "Logitech G102",
             category: "Sichqoncha",
-            price: "250 000 so&apos;m",
+            price: "250 000 so'm",
             image: ImigMishka,
             id: 3,
         },
@@ -77,11 +76,11 @@ function Home() {
         <div>
             {/* Glavniy ekran */}
 
-            <div className="relative w-full h-[600px] overflow-hidden rounded-3xl">
+            <div className="relative w-full h-[600px] overflow-hidden ">
                 <img
                     src={Orqafon}
                     alt="Hero"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover "
                 />
                 <div className="absolute inset-0 bg-black/50"></div>
                 <div className="absolute inset-0 z-10 flex flex-col justify-center px-16">
@@ -150,10 +149,17 @@ function Home() {
             </div>
 
             {/* Kategoriyalar */}
-
-            <div className=" border-2 border-violet-500 rounded-xl">
+            <div className="block text-2xl text-violet-500 md:hidden">
+                <IoMdLaptop />
+                <FaComputer />
+                <FiMonitor />
+                <FaKeyboard />
+                <FaComputerMouse/>
+                <FaHeadphones />
+            </div>
+            <div className="border-2 border-violet-500 rounded-xl hidden md:block">
                 <h2 className="text-white font-bold text-xl p-2">Kategoriyalar</h2>
-                <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-10 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-10 gap-4 ">
                     {kategoriyalar.map((item) => (
                         <div
                             key={item.id}
@@ -165,10 +171,9 @@ function Home() {
                     ))}
                 </div>
             </div>
-
             {/* Mashhur mahsulotlar */}
 
-            <div className="mt-16">
+            <div className="mt-16 hidden md:block ">
                 <h2 className="text-3xl font-bold text-white mb-8">Mashhur mahsulotlar</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
                     {MashhurMahsulotlar.map((item) => (
@@ -214,9 +219,9 @@ function Home() {
 
             {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 rounded-xl shadow-lg">
-                <img className="rounded-2xl" src={ImigAksesuarlar} alt="Description" />
-                <img className="rounded-2xl" src={ImigNoutbuklar} alt="Description" />
-                <img className="rounded-2xl" src={ImigKomponentlar} alt="Description" />
+                <img className="rounded-2xl hidden md:block" src={ImigAksesuarlar} alt="Description" />
+                <img className="rounded-2xl hidden md:block" src={ImigNoutbuklar} alt="Description" />
+                <img className="rounded-2xl hidden md:block" src={ImigKomponentlar} alt="Description" />
             </div>
         </div>
     )

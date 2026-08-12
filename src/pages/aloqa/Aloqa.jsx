@@ -43,7 +43,6 @@ function Aloqa() {
         <div className="h-[100%] bg-gray-900">
             <div className="max-w-[1500px] mx-auto px-8 py-12 flex items-center justify-between gap-10">
 
-                {/* Left */}
                 <div className="w-[28%]">
                     <h1 className="text-[68px] leading-[75px] font-bold text-white">
                         Biz bilan <br />
@@ -76,7 +75,6 @@ function Aloqa() {
                     </div>
                 </div>
 
-                {/* Center */}
                 <div className="w-[32%] flex justify-center">
                     <img
                         src={ContactImage}
@@ -85,10 +83,8 @@ function Aloqa() {
                     />
                 </div>
 
-                {/* Right */}
                 <div className="w-[40%] grid grid-cols-2 gap-5">
 
-                    {/* Card */}
                     <div className="bg-[#10131c] border border-[#232836] rounded-2xl px-6 py-6 flex items-start gap-5 hover:border-violet-500 hover:shadow-[0_0_35px_rgba(139,92,246,0.25)] duration-300">
 
                         <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500 to-violet-700 flex items-center justify-center text-white text-2xl shadow-lg shadow-violet-500/30">
@@ -111,7 +107,6 @@ function Aloqa() {
 
                     </div>
 
-                    {/* Card */}
                     <div className="bg-[#10131c] border border-[#232836] rounded-2xl px-6 py-6 flex items-start gap-5 hover:border-violet-500 hover:shadow-[0_0_35px_rgba(139,92,246,0.25)] duration-300">
 
                         <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500 to-violet-700 flex items-center justify-center text-white text-2xl shadow-lg shadow-violet-500/30">
@@ -134,7 +129,6 @@ function Aloqa() {
 
                     </div>
 
-                    {/* Card */}
                     <div className="bg-[#10131c] border border-[#232836] rounded-2xl px-6 py-6 flex items-start gap-5 hover:border-violet-500 hover:shadow-[0_0_35px_rgba(139,92,246,0.25)] duration-300">
 
                         <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500 to-violet-700 flex items-center justify-center text-white text-2xl shadow-lg shadow-violet-500/30">
@@ -158,7 +152,6 @@ function Aloqa() {
 
                     </div>
 
-                    {/* Card */}
                     <div className="bg-[#10131c] border border-[#232836] rounded-2xl px-6 py-6 flex items-start gap-5 hover:border-violet-500 hover:shadow-[0_0_35px_rgba(139,92,246,0.25)] duration-300">
 
                         <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500 to-violet-700 flex items-center justify-center text-white text-2xl shadow-lg shadow-violet-500/30">

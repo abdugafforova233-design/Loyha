@@ -8,6 +8,8 @@ import Izbriniy from "./pages/izbriniy/Izbriniy"
 import ProductInformation from "./pages/mahsulotlar/productInformation/ProductInformation"
 import Cart from "./pages/cart/Cart"
 import Footer from "./components/Footer"
+import ToryuzTor from "./pages/404/ToryuzTor"
+import Registration from "./pages/registration/Registration"
 
 
 function App() {
@@ -16,12 +18,15 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/mahsulotlar" element={<Mahsulotlar />} />
-        <Route path="/aloqa" element={<Aloqa />} />
-        <Route path="/biz_haqimizda" element={<Komponiya />} />
-        <Route path="/izbriniy" element={<Izbriniy />} />
+        <Route path="/Mahsulotlar" element={<Mahsulotlar />} />
+        <Route path="/Aloqa" element={<Aloqa />} />
+        <Route path="/Biz_haqimizda" element={<Komponiya />} />
+        <Route path="/Izbriniy" element={<Izbriniy />} />
         <Route path="/ProductInformation/:id" element={<ProductInformation />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/Cart" element={<Cart />} />
+        <Route path="/Registration" element={<Registration />} />
+        <Route path="*" element={<ToryuzTor />} />
+
       </Routes>
       <Footer />
     </div>

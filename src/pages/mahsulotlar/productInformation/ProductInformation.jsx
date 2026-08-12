@@ -89,7 +89,7 @@ function ProductInformation() {
             <div className="flex items-center gap-5 mb-6">
 
               <span className="text-gray-500 text-lg">
-                {mahsulot.price} so'm
+                {mahsulot.price} so&apos;m
               </span>
             </div>
 
@@ -165,7 +165,7 @@ function ProductInformation() {
             </div>
           </div>
         </div>
-        
+
         <div className="mt-10 border border-gray-800 rounded-xl overflow-hidden">
           <div className="flex gap-8 px-5 border-b border-gray-800 overflow-x-auto ">
             <button className="text-white pb-1 border-b-2 me-4 border-transparent hover:border-violet-500 hover:text-violet-500 transition-all duration-300 ">
