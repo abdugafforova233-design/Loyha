@@ -20,10 +20,12 @@ import { FiMonitor } from "react-icons/fi";
 import { FaHeadphones, FaKeyboard } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useFavorites } from "../Contexr/FavoritesContext";
- 
+import { useCart } from "../Contexr/CartContext";
+
 function Home() {
-    const { addFavorite } = useFavorites();
- 
+    const { addFavorite, removeFavorite, favorites } = useFavorites();
+    const { addToCart } = useCart();
+
     const [kategoriyalar, setKategoriyalar] = useState([]);
     useEffect(() => {
         fetch("http://localhost:3000/kategoriyalar")
@@ -33,7 +35,7 @@ function Home() {
             })
             .catch((err) => console.log(err));
     }, []);
- 
+
     const [mahsulotlar, setMahsulotlar] = useState([]);
     useEffect(() => {
         fetch("http://localhost:3000/mahsulotlar")
@@ -43,39 +45,44 @@ function Home() {
             })
             .catch((err) => console.log(err));
     }, []);
- 
+
     const [currentPage, setCurrentPage] = useState(1);
- 
+
     const itemsPerPage = 8;
- 
+
     const totalPages = Math.ceil(mahsulotlar.length / itemsPerPage);
- 
+
     const currentProducts = mahsulotlar.slice(
         (currentPage - 1) * itemsPerPage,
         currentPage * itemsPerPage
     );
- 
-    // Yurak bosilganda: faqat izbriniga qo'shiladi, sahifa o'zgarmaydi
-    const handleAddFavorite = (e, item) => {
+
+    const isFavorite = (id) =>
+        favorites.some((f) => String(f.id) === String(id));
+
+    // Yurak bosilganda: agar allaqachon izbrinda bo'lsa - o'chiradi, bo'lmasa - qo'shadi
+    const handleToggleFavorite = (e, item) => {
         e.preventDefault();
         e.stopPropagation();
-        addFavorite(item);
+
+        if (isFavorite(item.id)) {
+            removeFavorite(item.id);
+        } else {
+            addFavorite(item);
+        }
     };
- 
+
     // Savat bosilganda: faqat savatga qo'shiladi, sahifa o'zgarmaydi
     const handleAddToCart = (e, item) => {
         e.preventDefault();
         e.stopPropagation();
- 
-        const korzinka = JSON.parse(localStorage.getItem("korzinka")) || [];
-        const newKorzinka = [...korzinka, item];
-        localStorage.setItem("korzinka", JSON.stringify(newKorzinka));
+        addToCart(item);
     };
- 
+
     return (
         <div>
             {/* Glavniy ekran */}
- 
+
             <div className="relative w-full h-[290px] overflow-hidden md:h-[600px]">
                 <img
                     src={Orqafon}
@@ -87,10 +94,10 @@ function Home() {
                     <h1 className="text-3xl font-bold text-white md:text-6xl">
                         Eng yaxshi <br /> <span className="text-violet-500">kompyuterlar</span> va <br /> <span className="text-violet-500">aksessuarlar</span>  do&apos;koni
                     </h1>
- 
+
                     <p className="text-gray-300 text-sm mt-3 max-w-xl md:text-xl md:mt-5">
                         Sifatli mahsulotlar, qulay narxlar va tez yetkazib berish <br /> bilan sizning ehtiyojlaringizni qondiramiz.</p>
- 
+
                     <button className="mt-4 w-40 h-10 rounded-xl text-white bg-violet-600 md:mt-8 md:h-14 md:w-52">
                         Hoziroq xarid qiling
                     </button>
@@ -108,7 +115,7 @@ function Home() {
                         </p>
                     </div>
                 </div>
- 
+
                 <div className="flex items-center gap-4 p-5 border-r-2 border-indigo-500">
                     <FaTruckFast className="text-4xl text-violet-500" />
                     <div>
@@ -120,7 +127,7 @@ function Home() {
                         </p>
                     </div>
                 </div>
- 
+
                 <div className="flex items-center gap-4 p-5 border-r-2 border-indigo-500">
                     <GrCreditCard className="text-4xl text-violet-500" />
                     <div>
@@ -132,7 +139,7 @@ function Home() {
                         </p>
                     </div>
                 </div>
- 
+
                 <div className="flex items-center gap-4 p-5">
                     <LuHeadset className="text-4xl text-violet-500" />
                     <div>
@@ -144,9 +151,9 @@ function Home() {
                         </p>
                     </div>
                 </div>
- 
+
             </div>
- 
+
             {/* Kategoriyalar */}
             <div className="block text-4xl flex text-violet-700 md:hidden items-center justify-between gap-3 grid-cols-3">
                 <div className=" p-2 bg-gray-500/15 rounded-xl flex flex-col items-center w-25 h-20">
@@ -189,57 +196,62 @@ function Home() {
                 </div>
             </div>
             {/* Mashhur mahsulotlar */}
- 
+
             <div className="mt-8 md:16">
                 <h2 className="text-3xl font-bold text-white mb-8">Mashhur mahsulotlar</h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-                    {mahsulotlar.filter((item) => item.id <= 6).map((item) => (
-                        <Link
-                            key={item.id}
-                            to={`/ProductInformation/${item.id}`}
-                            className="bg-[#151A2D] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-600/30 hover:-translate-y-2 duration-300"
-                        >
-                            <div className="relative">
-                                <img
-                                    src={item.image}
-                                    alt={item.name}
-                                    className="w-full h-64 object-cover"
-                                />
- 
-                                <button
-                                    onClick={(e) => handleAddFavorite(e, item)}
-                                    className="absolute top-4 right-4 bg-[#0F172A]/80 p-2 rounded-full text-xl text-white hover:text-red-500 duration-300"
-                                >
-                                    <HiOutlineHeart />
-                                </button>
-                            </div>
- 
-                            <div className="p-5">
-                                <h3 className="text-xl font-semibold text-white mt-2">
-                                    {item.name}
-                                </h3>
- 
-                                <p className="text-sm text-gray-400">
-                                    {item.category}
-                                </p>
- 
-                                <div className="flex items-center justify-between mt-5">
-                                    <span className="text-2xl font-bold text-indigo-500">
-                                        {item.price}
-                                    </span>
+                    {mahsulotlar.filter((item) => item.id <= 6).map((item) => {
+                        const favorit = isFavorite(item.id);
+
+                        return (
+                            <Link
+                                key={item.id}
+                                to={`/ProductInformation/${item.id}`}
+                                className="bg-[#151A2D] rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-600/30 hover:-translate-y-2 duration-300"
+                            >
+                                <div className="relative">
+                                    <img
+                                        src={item.image}
+                                        alt={item.name}
+                                        className="w-full h-64 object-cover"
+                                    />
+
                                     <button
-                                        onClick={(e) => handleAddToCart(e, item)}
-                                        className="w-12 h-12 rounded-xl bg-indigo-600 hover:bg-indigo-700 flex items-center justify-center text-2xl text-white duration-300"
+                                        onClick={(e) => handleToggleFavorite(e, item)}
+                                        className={`absolute top-4 right-4 bg-[#0F172A]/80 p-2 rounded-full text-xl duration-300 ${favorit ? "text-red-500" : "text-white hover:text-red-500"
+                                            }`}
                                     >
-                                        <HiOutlineShoppingCart />
+                                        <HiOutlineHeart className={favorit ? "fill-current" : ""} />
                                     </button>
                                 </div>
-                            </div>
-                        </Link>
-                    ))}
+
+                                <div className="p-5">
+                                    <h3 className="text-xl font-semibold text-white mt-2">
+                                        {item.name}
+                                    </h3>
+
+                                    <p className="text-sm text-gray-400">
+                                        {item.category}
+                                    </p>
+
+                                    <div className="flex items-center justify-between mt-5">
+                                        <span className="text-2xl font-bold text-indigo-500">
+                                            {item.price}
+                                        </span>
+                                        <button
+                                            onClick={(e) => handleAddToCart(e, item)}
+                                            className="w-9 h-9 md:w-11 md:h-11 rounded-xl border border-violet-500 text-violet-400 hover:bg-violet-600 hover:text-white flex items-center justify-center text-lg md:text-xl duration-300"
+                                        >
+                                            <HiOutlineShoppingCart />
+                                        </button>
+                                    </div>
+                                </div>
+                            </Link>
+                        );
+                    })}
                 </div>
             </div>
- 
+
             {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 rounded-xl shadow-lg">
                 <img className="rounded-2xl hidden md:block" src={ImigAksesuarlar} alt="Description" />
@@ -249,6 +261,5 @@ function Home() {
         </div>
     )
 }
- 
+
 export default Home
- 

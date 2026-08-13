@@ -69,7 +69,6 @@ function Registration() {
                                 </div>
                             </div>
 
-
                             <div className="flex text-white gap-4">
                                 <div className="w-14 h-14 rounded-xl bg-[#10131c] border border-violet-600 text-violet-500 text-2xl flex items-center justify-center">
                                     <FiHeart />
@@ -85,7 +84,6 @@ function Registration() {
                                     </p>
                                 </div>
                             </div>
-
 
                             <div className="flex text-white gap-4">
                                 <div className="w-14 h-14 rounded-xl bg-[#10131c] border border-violet-600 text-violet-500 text-2xl flex items-center justify-center">

@@ -19,7 +19,7 @@ function Izbriniy() {
 
                 ) : (
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
                         {favorites.map((item) => (
 
@@ -28,7 +28,6 @@ function Izbriniy() {
                                 className="bg-[#151A2D] rounded-2xl overflow-hidden border border-gray-800"
                             >
 
-                                {/* RASM */}
                                 <div className="relative">
 
                                     <img
@@ -37,7 +36,7 @@ function Izbriniy() {
                                         className="w-full h-52 object-contain"
                                     />
 
-                                    {/* O'CHIRISH */}
+                                    {/* O'chrish knopkasi */}
                                     <button
                                         onClick={() =>
                                             removeFavorite(item.id)
@@ -49,8 +48,6 @@ function Izbriniy() {
 
                                 </div>
 
-
-                                {/* MA'LUMOT */}
                                 <div className="p-4">
 
                                     <h2 className="text-lg font-semibold">

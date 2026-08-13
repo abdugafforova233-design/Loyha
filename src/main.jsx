@@ -4,12 +4,14 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { FavoritesProvider } from './Contexr/FavoritesContext.jsx'
-
+import { CartProvider } from './Contexr/CartContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <FavoritesProvider>
-      <App />
+      <CartProvider>
+        <App />
+      </CartProvider>
     </FavoritesProvider>
   </BrowserRouter>
 )

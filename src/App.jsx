@@ -4,17 +4,18 @@ import Mahsulotlar from "./pages/mahsulotlar/Mahsulotlar"
 import Navbar from "./components/Navbar"
 import Aloqa from "./pages/aloqa/Aloqa"
 import Komponiya from "./pages/komponiya/Komponiya"
-import ProductInformation from "./pages/mahsulotlar/productInformation/ProductInformation"
-import Cart from "./pages/cart/Cart"
 import Footer from "./components/Footer"
 import ToryuzTor from "./pages/404/ToryuzTor"
 import Registration from "./pages/registration/Registration"
 import Izbriniy from "./pages/izbriniy/Izbriniy"
+import Cart from "./pages/cart/Cart"
+import CartRasmiylashtrish from "./pages/cart/CartRasmiylashtrish"
+import ProductInformation from "./pages/mahsulotlar/productInformation/ProductInformation"
 
 
 function App() {
   return (
-    <div className="bg-gray-800">
+    <div className="bg-gray-950">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Izbriniy" element={<Izbriniy />} />
         <Route path="/ProductInformation/:id" element={<ProductInformation />} />
         <Route path="/Cart" element={<Cart />} />
+        <Route path="/CartRasmiylashtrish " element={<CartRasmiylashtrish />} />
         <Route path="/Registration" element={<Registration />} />
         <Route path="*" element={<ToryuzTor />} />
 

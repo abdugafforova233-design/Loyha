@@ -15,17 +15,19 @@ import {
 import { CgProfile } from "react-icons/cg";
 import { useState } from "react";
 import { useFavorites } from "../Contexr/FavoritesContext";
+import { useCart } from "../Contexr/CartContext";
 
 
 function Navbar() {
     const [open, setOpen] = useState(false);
     const { favoritesCount } = useFavorites();
-    const { favorites, removeFavorite } = useFavorites();
-
+    const { cartCount } = useCart();
+// className="fixed top-0 left-0 right-0 z-50 bg-[#090e17]"
     return (
-        <div>
+        <nav >
+
             {/* DESKTOP VERSIYA */}
-            <div className="hidden md:flex w-full items-center justify-between px-10 py-5 bg-gray-900">
+            <div className="hidden md:flex w-full items-center justify-between px-10 py-5 ">
 
                 <Link to="/">
                     <div className="flex items-center gap-2">
@@ -92,8 +94,13 @@ function Navbar() {
                         )}
                     </Link>
 
-                    <Link to="/cart">
+                    <Link to="/cart" className="relative">
                         <HiOutlineShoppingCart className="text-2xl text-white cursor-pointer" />
+                        {cartCount > 0 && (
+                            <span className="absolute -top-2 -right-2 bg-violet-600 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
+                                {cartCount}
+                            </span>
+                        )}
                     </Link>
 
                     <Link to="/Registration">
@@ -104,9 +111,8 @@ function Navbar() {
 
             </div>
 
-
             {/* MOBILE VERSIYA */}
-            <div className="flex md:hidden flex-col w-full bg-gray-900 text-white">
+            <div className="flex md:hidden flex-col w-full text-white">
 
                 <div className="h-16 flex items-center justify-between px-5">
 
@@ -134,21 +140,21 @@ function Navbar() {
                         className="relative" >
                         <HiOutlineShoppingCart className="text-2xl" />
 
-                        <span className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-violet-600 text-[10px] flex items-center justify-center">
-                            1
-                        </span>
+                        {cartCount > 0 && (
+                            <span className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-violet-600 text-[10px] flex items-center justify-center">
+                                {cartCount}
+                            </span>
+                        )}
                     </Link>
 
                 </div>
 
-                {/* Sidebar - faqat open=true bo'lganda DOM'ga qo'shiladi */}
                 {open && (
                     <>
                         <div
                             className="fixed top-0 left-0 h-screen w-72 bg-[#0F1424] border-r border-[#2B3045] z-50
                             transition-transform duration-300 ease-in-out translate-x-0"
                         >
-                            {/* Sidebar header */}
                             <div className="flex items-center justify-between px-5 py-5 border-b border-[#2B3045]">
                                 <h2 className="text-xl font-bold text-white">
                                     TechStore
@@ -183,7 +189,7 @@ function Navbar() {
                                 </Link>
 
                                 <Link
-                                    to="/kompaniya"
+                                    to="/biz_haqimizda"
                                     onClick={() => setOpen(false)}
                                     className="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-300 hover:bg-violet-600 hover:text-white transition"
                                 >
@@ -212,7 +218,6 @@ function Navbar() {
                             </div>
                         </div>
 
-                        {/* Overlay - endi faqat sidebar ochiq bo'lganda ko'rinadi va click'larni tutadi */}
                         <div
                             onClick={() => setOpen(false)}
                             className="fixed inset-0 bg-black/50 z-40"
@@ -273,11 +278,16 @@ function Navbar() {
 
                     <Link
                         to="/cart"
-                        className="flex flex-col items-center text-gray-400">
+                        className="relative flex flex-col items-center text-gray-400">
                         <HiOutlineShoppingCart className="text-xl" />
                         <span className="text-[10px]">
                             Savat
                         </span>
+                        {cartCount > 0 && (
+                            <span className="absolute -top-1 right-3 bg-violet-600 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
+                                {cartCount}
+                            </span>
+                        )}
                     </Link>
 
                     <Link
@@ -294,7 +304,7 @@ function Navbar() {
 
             </div>
 
-        </div>
+        </nav>
     )
 }
 
