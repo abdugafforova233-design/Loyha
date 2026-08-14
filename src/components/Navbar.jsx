@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate, useSearchParams } from "react-router-dom"
 import {
     HiOutlineComputerDesktop,
     HiOutlineBars3,
@@ -13,7 +13,7 @@ import {
     HiOutlineXMark,
 } from "react-icons/hi2";
 import { CgProfile } from "react-icons/cg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFavorites } from "../Contexr/FavoritesContext";
 import { useCart } from "../Contexr/CartContext";
 
@@ -22,7 +22,20 @@ function Navbar() {
     const [open, setOpen] = useState(false);
     const { favoritesCount } = useFavorites();
     const { cartCount } = useCart();
-// className="fixed top-0 left-0 right-0 z-50 bg-[#090e17]"
+
+    const navigate = useNavigate()
+    const [searchParams] = useSearchParams()
+    const [qidiruv, setQidiruv] = useState(searchParams.get("name") || "");
+    const handleChange = (e) => {
+        const value = e.target.value;
+        setQidiruv(value);
+
+        if (value.trim() === "") {
+            navigate("/mahsulotlar");
+        } else {
+            navigate(`/mahsulotlar?name=${encodeURIComponent(value.trim())}`);
+        }
+    };
     return (
         <nav >
 
@@ -41,16 +54,18 @@ function Navbar() {
                     </div>
                 </Link>
 
-                <div className="relative w-[420px]">
-
+                <form className="relative w-[420px]">
                     <input
+                        value={qidiruv}
+                        onChange={handleChange}
                         className="w-full h-12 bg-transparent border border-[#2B3045] rounded-xl pl-5 pr-12 text-white placeholder:text-gray-400 focus:outline-none focus:border-violet-500"
                         type="text"
                         placeholder="Mahsulot qidirish..." />
-
-                    <HiOutlineMagnifyingGlass
-                        className="absolute right-4 top-1/2 -translate-y-1/2 text-2xl text-white cursor-pointer" />
-                </div>
+                    <button>
+                        <HiOutlineMagnifyingGlass
+                            className="absolute right-4 top-1/2 -translate-y-1/2 text-2xl text-white cursor-pointer" />
+                    </button>
+                </form>
 
                 <nav className="flex items-center">
 
@@ -230,6 +245,8 @@ function Navbar() {
                     <div className="relative">
 
                         <input
+                            value={qidiruv}
+                            onChange={handleChange}
                             type="text"
                             placeholder="Mahsulot qidirish..."
                             className="w-full h-10 bg-[#111827] border border-[#252d3a] rounded-lg px-4 pr-10 text-sm text-white outline-none focus:border-violet-500" />

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { HiOutlineHeart, HiOutlineShoppingCart, HiOutlineFunnel, HiOutlineXMark, HiChevronDown } from "react-icons/hi2";
 import { TbCategory } from "react-icons/tb";
 import Pagination from "./Pagination";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useFavorites } from "../../Contexr/FavoritesContext";
 import { useCart } from "../../Contexr/CartContext";
 
@@ -13,6 +13,9 @@ const SARALASH_OPTIONS = [
 ];
 
 function Mahsulotlar() {
+    const [searchParams] = useSearchParams();
+    const qidiruv = searchParams.get("name") || "";
+
     const [min, setMin] = useState(500000);
     const [max, setMax] = useState(12000000);
 
@@ -62,7 +65,9 @@ function Mahsulotlar() {
         const kategoriyaMos = !selectedCategory || item.category === selectedCategory;
         const brendMos = selectedBrands.length === 0 || selectedBrands.includes(item.brand);
         const narxMos = Number(item.price) >= min && Number(item.price) <= max;
-        return kategoriyaMos && brendMos && narxMos;
+
+        const qidiruvMos = !qidiruv || item.name?.toLowerCase().includes(qidiruv.toLowerCase());
+        return kategoriyaMos && brendMos && narxMos && qidiruvMos;
     });
 
     const sortedProducts = [...filteredProducts].sort((a, b) => {
@@ -86,7 +91,7 @@ function Mahsulotlar() {
 
     useEffect(() => {
         setCurrentPage(1);
-    }, [selectedCategory, selectedBrands, min, max, sortOption]);
+    }, [selectedCategory, selectedBrands, min, max, sortOption, qidiruv]);
 
     const { addFavorite, favorites, removeFavorite } = useFavorites();
     const { addToCart } = useCart();
@@ -217,13 +222,14 @@ function Mahsulotlar() {
                 <div>
                     <h1 className="text-2xl md:text-3xl font-bold text-white">Mahsulotlar</h1>
                     <p className="text-gray-400 text-sm mt-1">
-                        {sortedProducts.length} ta mahsulot
+                        {qidiruv
+                            ? `"${qidiruv}" bo'yicha ${sortedProducts.length} ta natija`
+                            : `${sortedProducts.length} ta mahsulot`}
                     </p>
                 </div>
 
                 <div className="flex items-center gap-3">
 
-                    {/* Mobil filtr tugmasi */}
                     <button
                         onClick={() => setMobileFilterOpen(true)}
                         className="md:hidden relative flex items-center gap-2 h-11 px-4 rounded-xl border border-violet-500 text-violet-400"
@@ -237,7 +243,6 @@ function Mahsulotlar() {
                         )}
                     </button>
 
-                    {/* Saralash dropdown */}
                     <div className="relative">
                         <button
                             onClick={() => setSortOpen((o) => !o)}
@@ -268,7 +273,6 @@ function Mahsulotlar() {
                 </div>
             </div>
 
-            {/* Mobil kategoriya chiplar */}
             {categories.length > 0 && (
                 <div className="flex md:hidden items-center gap-3 mt-5 overflow-x-auto pb-2 [scrollbar-width:none]">
                     <button
@@ -298,7 +302,6 @@ function Mahsulotlar() {
 
             <div className="flex mt-5 gap-6">
 
-                {/* Desktop filtr paneli */}
                 <div className="hidden md:block w-64 shrink-0 p-4 border border-violet-400 rounded-2xl h-fit">
                     <FiltrPaneli />
                 </div>
@@ -398,7 +401,9 @@ function Mahsulotlar() {
 
                             <div className="col-span-full flex justify-center items-center py-20">
                                 <p className="text-gray-400 text-lg">
-                                    Bu kategoriyada mahsulot topilmadi.
+                                    {qidiruv
+                                        ? `"${qidiruv}" bo'yicha mahsulot topilmadi.`
+                                        : "Bu kategoriyada mahsulot topilmadi."}
                                 </p>
                             </div>
 

@@ -191,7 +191,7 @@ function Registration() {
                             className="w-full py-4 rounded-lg bg-violet-600 hover:bg-violet-700 duration-300 text-lg font-medium">
                             Ro&apos;yxatdan o&apos;tish
                         </button>
-                        
+
                         <div className="flex items-center gap-4 my-7">
 
                             <div className="h-px bg-[#303642] flex-1" />

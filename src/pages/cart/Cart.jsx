@@ -1,3 +1,4 @@
+import Rasmiylashtrish from "./Rasmiylashtrish";
 import {
     HiOutlineArrowLeft,
     HiOutlineShieldCheck,
@@ -7,8 +8,11 @@ import {
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { useCart } from "../../Contexr/CartContext";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Cart() {
+    const [modal, setModal] = useState(false)
+    
     const {
         cart,
         cartCount,
@@ -227,6 +231,7 @@ function Cart() {
                 </div>
 
                 <button
+                    onClick={() => setModal(true)}
                     disabled={cart.length === 0}
                     className="w-full h-14 mt-8 rounded-xl bg-gradient-to-r from-violet-700 via-violet-600 to-violet-500 text-white font-semibold text-lg flex items-center justify-center gap-3 shadow-lg shadow-violet-700/20 hover:brightness-110 transition disabled:opacity-40 disabled:cursor-not-allowed">
                     <HiOutlineShoppingCart className="text-2xl" />
@@ -288,8 +293,12 @@ function Cart() {
                 </div>
 
             </div>
-
-        </div>
+            {modal && (
+                <Rasmiylashtrish
+                    yopish={() => setModal(false)}
+                />
+            )}
+        </div >
     );
 }
 
