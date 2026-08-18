@@ -9,7 +9,6 @@ import {
 import { SlEarphonesAlt } from "react-icons/sl";
 import { PiTelegramLogo } from "react-icons/pi";
 import { FiInstagram } from "react-icons/fi";
-import ContactImage from "../../assets/ContactImage.png"
 import { useState } from "react";
 
 function Aloqa() {
@@ -78,7 +77,7 @@ function Aloqa() {
 
                     <div className="w-[70%] sm:w-[55%] md:w-[32%] flex justify-center order-first md:order-none">
                         <img
-                            src={ContactImage}
+                            src="/images/ContactImage.png"
                             alt=""
                             className="w-full object-contain drop-shadow-[0_0_45px_rgba(139,92,246,0.45)]"
                         />

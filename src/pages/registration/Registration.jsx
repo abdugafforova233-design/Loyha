@@ -1,5 +1,4 @@
 import { FiHeart, FiShoppingCart } from "react-icons/fi";
-import register from "../../assets/ContactImage.png";
 import { useState } from "react";
 
 function Registration() {
@@ -106,7 +105,7 @@ function Registration() {
 
                         <div className="absolute -bottom-8 -left-10 w-[680px] h-[410px]">
                             <img
-                                src={register}
+                                src="/Images/ContactImage.png"
                                 className="w-full h-full object-contain"
                                 alt=""
                             />

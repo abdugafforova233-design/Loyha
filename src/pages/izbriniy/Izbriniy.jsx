@@ -1,5 +1,5 @@
 import { HiOutlineShoppingCart, HiOutlineTrash } from "react-icons/hi2";
-import { useFavorites } from "../../Contexr/FavoritesContext";
+import { useFavorites } from "../../Context/FavoritesContext";
 
 
 function Izbriniy() {

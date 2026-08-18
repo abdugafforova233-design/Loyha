@@ -6,8 +6,8 @@ import {
   HiOutlineTruck,
 } from "react-icons/hi2";
 import { TbShieldCheck } from "react-icons/tb";
-import { useFavorites } from "../../../Contexr/FavoritesContext";
-import { useCart } from "../../../Contexr/CartContext";
+import { useFavorites } from "../../../Context/FavoritesContext";
+import { useCart } from "../../../Context/CartContext";
 
 const TABLAR = [
   { key: "tavsif", label: "Tavsif" },

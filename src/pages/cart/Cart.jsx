@@ -6,7 +6,7 @@ import {
     HiOutlineTrash,
 } from "react-icons/hi";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
-import { useCart } from "../../Contexr/CartContext";
+import { useCart } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -77,7 +77,7 @@ function Cart() {
 
                                         <div>
 
-                                            <h3 className="text-[17px] font-semibold text-white">
+                                            <h3 className=" font-semibold text-white text-sm md:text-[17px]">
                                                 {item.name}
                                             </h3>
 
@@ -85,7 +85,7 @@ function Cart() {
                                                 {item.category}
                                             </p>
 
-                                            <p className="text-sm text-green-500 mt-2">
+                                            <p className="text-green-500 mt-2 text-sm whitespace-nowrap">
                                                 • Stokda bor
                                             </p>
 

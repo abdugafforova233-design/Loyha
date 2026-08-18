@@ -92,7 +92,6 @@ function Rasmiylashtrish({ yopish }) {
                         onChange={boglanish}
                         placeholder="+998 XX XXX XX XX"
                     />
-
                     <button
                         type="submit"
                         className="w-full py-4 rounded-lg bg-violet-600 hover:bg-violet-700 duration-300 text-lg font-medium"

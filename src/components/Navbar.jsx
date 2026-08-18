@@ -14,8 +14,8 @@ import {
 } from "react-icons/hi2";
 import { CgProfile } from "react-icons/cg";
 import { useEffect, useState } from "react";
-import { useFavorites } from "../Contexr/FavoritesContext";
-import { useCart } from "../Contexr/CartContext";
+import { useFavorites } from "../Context/FavoritesContext";
+import { useCart } from "../Context/CartContext";
 
 
 function Navbar() {

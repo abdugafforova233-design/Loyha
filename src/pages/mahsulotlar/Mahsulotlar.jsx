@@ -3,8 +3,8 @@ import { HiOutlineHeart, HiOutlineShoppingCart, HiOutlineFunnel, HiOutlineXMark,
 import { TbCategory } from "react-icons/tb";
 import Pagination from "./Pagination";
 import { Link, useSearchParams } from "react-router-dom";
-import { useFavorites } from "../../Contexr/FavoritesContext";
-import { useCart } from "../../Contexr/CartContext";
+import { useFavorites } from "../../Context/FavoritesContext";
+import { useCart } from "../../Context/CartContext";
 
 const SARALASH_OPTIONS = [
     { value: "yangi", label: "Yangilari" },

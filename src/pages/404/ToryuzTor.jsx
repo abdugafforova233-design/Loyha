@@ -1,12 +1,11 @@
 import { FaHouseChimney } from "react-icons/fa6";
-import error from "../../assets/404.png";
 import { Link } from "react-router-dom";
 
 function ToryuzTor() {
     return (
         <div className="relative min-h-screen w-full overflow-hidden bg-black">
             <img
-                src={error}
+                src="/images/404.png"
                 alt="404"
                 className="absolute inset-0 w-full h-full object-cover"
             />

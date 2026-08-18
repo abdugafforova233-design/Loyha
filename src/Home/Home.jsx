@@ -1,13 +1,3 @@
-import Orqafon from "../assets/Orqafon.png"
-import ImigKlyava from "../assets/ImigKlyava.png";
-import ImigNaushnik from "../assets/ImigNaushnik.webp"
-import ImigMishka from "../assets/ImigMishka.jpg"
-import ImigManitor from "../assets/ImigMonitor.png"
-import samsung from "../assets/samsung.png"
-import ImigKorpus from "../assets/Korpus.jpg"
-import ImigAksesuarlar from "../assets/ImigAksesuarlar.png"
-import ImigNoutbuklar from "../assets/ImigNoutbuklar.png"
-import ImigKomponentlar from "../assets/ImigKomponentlar.png"
 import { HiOutlineHeart, HiOutlineShoppingCart } from "react-icons/hi2";
 import { IoFlash } from "react-icons/io5";
 import { LuShieldCheck } from "react-icons/lu";
@@ -19,8 +9,8 @@ import { IoMdLaptop } from "react-icons/io";
 import { FiMonitor } from "react-icons/fi";
 import { FaHeadphones, FaKeyboard } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useFavorites } from "../Contexr/FavoritesContext";
-import { useCart } from "../Contexr/CartContext";
+import { useFavorites } from "../Context/FavoritesContext";
+import { useCart } from "../Context/CartContext";
 
 function Home() {
     const { addFavorite, removeFavorite, favorites } = useFavorites();
@@ -85,7 +75,7 @@ function Home() {
 
             <div className="relative w-full h-[290px] overflow-hidden md:h-[600px]">
                 <img
-                    src={Orqafon}
+                    src="/images/Orqafon.png"
                     alt="Hero"
                     className="w-full h-full object-cover "
                 />
@@ -254,9 +244,9 @@ function Home() {
 
             {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
             <div className="mt-16 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 rounded-xl shadow-lg">
-                <img className="rounded-2xl hidden md:block" src={ImigAksesuarlar} alt="Description" />
-                <img className="rounded-2xl hidden md:block" src={ImigNoutbuklar} alt="Description" />
-                <img className="rounded-2xl hidden md:block" src={ImigKomponentlar} alt="Description" />
+                <img className="rounded-2xl hidden md:block" src="/images/ImigAksesuarlar.png" alt="Description" />
+                <img className="rounded-2xl hidden md:block" src="/images/ImigNoutbuklar.png" alt="Description" />
+                <img className="rounded-2xl hidden md:block" src="/images/ImigKomponentlar.png" alt="Description" />
             </div>
         </div>
     )

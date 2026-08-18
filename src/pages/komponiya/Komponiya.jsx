@@ -1,5 +1,4 @@
 import { LuHeadset, LuShieldCheck } from "react-icons/lu"
-import Contactlmage from "../../assets/ContactImage.png"
 import { HiOutlineShoppingBag, HiOutlineUserGroup } from "react-icons/hi"
 import { GoTrophy } from "react-icons/go"
 import { FaTruckFast } from "react-icons/fa6"
@@ -71,7 +70,7 @@ function Komponiya() {
             <div className="flex flex-col md:flex-row md:items-center gap-8 md:gap-10">
                 <img
                     className="w-full md:hidden rounded-2xl order-1"
-                    src={Contactlmage}
+                    src="/images/ContactImage.png"
                     alt=""
                 />
 
@@ -122,7 +121,7 @@ function Komponiya() {
 
                 <img
                     className="hidden md:block md:w-1/2 rounded-2xl order-2"
-                    src={Contactlmage}
+                    src="/images/ContactImage.png"
                     alt=""
                 />
             </div>
